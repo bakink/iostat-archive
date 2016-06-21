@@ -1,0 +1,11 @@
+
+*** crontab entries *****
+cleanup entry
+
+0  1 * * * find /home/oracle/iostat -type f -name "iostat*[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]*" -mtime +31 | xargs --no-run-if-empty rm
+
+crontab entry to start iostat 
+
+# jkstill - try to start iostat archiver once per day
+15 1 * * * ~/scripts/iostat_archive.sh
+
